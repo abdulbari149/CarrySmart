@@ -1,0 +1,15 @@
+{
+  "include": ["./src", "index.js", "./__tests__", "*.d.ts", "storybook", "src/types"],
+  "exclude": [
+    "./*.json",
+    "android",
+    "ios",
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+    "jest.setup.ts",
+    "script"
+  ],
+  "extends": "./tsconfig.json"
+}

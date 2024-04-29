@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given - Radio component and props are: {"selected":false,"style":{"marginBottom":10}} should render correctly and match snapshot 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "borderColor": "#FF4334",
+      "borderRadius": 40,
+      "borderWidth": 1,
+      "height": 40,
+      "justifyContent": "center",
+      "marginBottom": 10,
+      "opacity": 1,
+      "width": 40,
+    }
+  }
+>
+  <View
+    style={
+      [
+        {
+          "borderRadius": 32,
+          "height": 32,
+          "width": 32,
+        },
+        {
+          "backgroundColor": "#ffffff",
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`Given - Radio component and props are: {"selected":true,"style":{"marginBottom":10}} should render correctly and match snapshot 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "borderColor": "#FF4334",
+      "borderRadius": 40,
+      "borderWidth": 1,
+      "height": 40,
+      "justifyContent": "center",
+      "marginBottom": 10,
+      "opacity": 1,
+      "width": 40,
+    }
+  }
+>
+  <View
+    style={
+      [
+        {
+          "borderRadius": 32,
+          "height": 32,
+          "width": 32,
+        },
+        {
+          "backgroundColor": "#FF4334",
+        },
+      ]
+    }
+  />
+</View>
+`;
