@@ -12,29 +12,28 @@ const styles = StyleSheet.create({
     backgroundColor: '#f3f3f3',
   },
   saveDetailsSwipe: {
-    position: 'absolute',
-    bottom: 10,
+    // position: 'absolute',
+    // bottom: 10,
     width: '100%',
     alignItems: 'center',
   },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 15,
-    paddingHorizontal: 15,
-    width: '100%',
+  formContainer: {
     flex: 1,
-    marginTop: Dimensions.height.size2,
+    marginVertical: Dimensions.height.size2,
+  },
+  form: {
+    paddingHorizontal: 15,
   },
   card: {
     width: '100%',
-    height: Dimensions.height.size9,
+    minHeight: Dimensions.height.size9,
     alignItems: 'center',
     backgroundColor: Colors.white,
     elevation: 2,
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: Dimensions.width.size5,
+    marginBottom: 15,
   },
   input: {
     borderWidth: 2,

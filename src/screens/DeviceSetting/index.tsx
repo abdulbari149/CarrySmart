@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Switch, TextInput, View } from 'react-native';
+import { ScrollView, Switch, TextInput, View } from 'react-native';
 
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
@@ -15,6 +15,8 @@ import Typography from 'components/Typography';
 import useFormState from 'hooks/use-form-state';
 
 import Counter from 'components/Counter';
+
+import AddContact from 'components/AddContact';
 
 import styles from './styles';
 
@@ -33,13 +35,17 @@ const DeviceSetting: DeviceSettingScreen = () => {
     warningToneEnabled: false,
     hapticAlert: false,
     textAlert: false,
+    dialAlert: false,
     microphoneEnabled: false,
     delay: 0,
     microphone: 0,
   });
   return (
     <View style={styles.container}>
-      <View style={styles.form}>
+      <ScrollView
+        style={styles.formContainer}
+        contentContainerStyle={styles.form}
+      >
         <View style={styles.card}>
           <Typography variant="body2" style={{ color: Colors.primary }}>
             Name
@@ -71,6 +77,7 @@ const DeviceSetting: DeviceSettingScreen = () => {
             value={values.warningTone}
             onChangeText={handleChange('warningTone')}
             style={[styles.input, { width: '35%' }]}
+            editable={false}
           />
           <Switch
             trackColor={{ false: '#ffbdbe', true: '#ffbdbe' }}
@@ -139,20 +146,64 @@ const DeviceSetting: DeviceSettingScreen = () => {
           />
         </View>
 
-        <View style={styles.card}>
-          <Typography variant="body2" style={{ color: Colors.primary }}>
-            Text Alert
-          </Typography>
-          <Switch
-            trackColor={{ false: '#ffbdbe', true: '#ffbdbe' }}
-            thumbColor={values.textAlert ? '#f90004' : '#ececec'}
-            ios_backgroundColor="#ffbdbe"
-            onValueChange={handleChange('textAlert')}
-            value={values.textAlert}
-            style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.4 }] }}
-          />
+        <View
+          style={[
+            styles.card,
+            { flexDirection: 'column', gap: 20, paddingVertical: 20 },
+          ]}
+        >
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              width: '100%',
+            }}
+          >
+            <Typography variant="body2" style={{ color: Colors.primary }}>
+              Text Alert
+            </Typography>
+            <Switch
+              trackColor={{ false: '#ffbdbe', true: '#ffbdbe' }}
+              thumbColor={values.textAlert ? '#f90004' : '#ececec'}
+              ios_backgroundColor="#ffbdbe"
+              onValueChange={handleChange('textAlert')}
+              value={values.textAlert}
+              style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.4 }] }}
+            />
+          </View>
+          <AddContact />
         </View>
-      </View>
+
+        <View
+          style={[
+            styles.card,
+            { flexDirection: 'column', gap: 20, paddingVertical: 20 },
+          ]}
+        >
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              width: '100%',
+            }}
+          >
+            <Typography variant="body2" style={{ color: Colors.primary }}>
+              Dial Alert
+            </Typography>
+            <Switch
+              trackColor={{ false: '#ffbdbe', true: '#ffbdbe' }}
+              thumbColor={values.dialAlert ? '#f90004' : '#ececec'}
+              ios_backgroundColor="#ffbdbe"
+              onValueChange={handleChange('dialAlert')}
+              value={values.dialAlert}
+              style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.4 }] }}
+            />
+          </View>
+          <AddContact />
+        </View>
+      </ScrollView>
 
       <View style={styles.saveDetailsSwipe}>
         <SwipeButton text="Save Details" />
