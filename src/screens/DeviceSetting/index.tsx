@@ -172,7 +172,7 @@ const DeviceSetting: DeviceSettingScreen = () => {
               style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.4 }] }}
             />
           </View>
-          <AddContact />
+          {values.textAlert && <AddContact />}
         </View>
 
         <View
@@ -201,7 +201,7 @@ const DeviceSetting: DeviceSettingScreen = () => {
               style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.4 }] }}
             />
           </View>
-          <AddContact />
+          {values.dialAlert && <AddContact />}
         </View>
       </ScrollView>
 

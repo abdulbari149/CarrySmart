@@ -8,21 +8,26 @@ import styles from './styles';
 
 const Radio: RadioComponent = ({ selected, onChange = () => {}, ...props }) => (
   <TouchableOpacity
-    {...props}
-    style={[styles.container, props.style]}
     onPress={(event) => {
-      if (props.onPress) props?.onPress(event);
-      onChange();
+      onChange(event);
+    }}
+    style={{
+      width: styles.container.width * 1.5,
+      height: styles.container.height * 1.5,
+      alignItems: 'center',
+      justifyContent: 'center',
     }}
   >
-    <View
-      style={[
-        styles.circle,
-        {
-          backgroundColor: selected ? Colors.primary : Colors.white,
-        },
-      ]}
-    />
+    <View {...props} style={[styles.container, props.style]}>
+      <View
+        style={[
+          styles.circle,
+          {
+            backgroundColor: selected ? Colors.primary : Colors.white,
+          },
+        ]}
+      />
+    </View>
   </TouchableOpacity>
 );
 

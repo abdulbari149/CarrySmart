@@ -130,7 +130,7 @@ const Home: HomeScreen = ({ navigation }) => {
                 <View style={styles.itemLeft}>
                   <Radio
                     selected={isSelected}
-                    onPress={(e) => {
+                    onChange={(e) => {
                       e.stopPropagation();
                       setSelectedDevice(item);
                     }}
@@ -153,25 +153,35 @@ const Home: HomeScreen = ({ navigation }) => {
                     </Typography>
                   </View>
                 </View>
-                <View style={{ flexDirection: 'row', gap: 10 }}>
-                  <View
+                <View style={{ flexDirection: 'row', gap: 0 }}>
+                  <TouchableOpacity
                     style={{
-                      width: Dimensions.width.size8,
-                      height: Dimensions.width.size8,
-                      borderRadius: Dimensions.width.size8 / 2,
-                      backgroundColor: '#ab1516',
+                      width: Dimensions.width.size8 * 1.5,
+                      height: Dimensions.width.size8 * 1.5,
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
+                    activeOpacity={1}
+                    onPress={() => navigation.navigate(SCREENS.DEVICE_SETTING)}
                   >
-                    <Settings color="#ffffff" size={Dimensions.width.size5} />
-                  </View>
+                    <View
+                      style={{
+                        width: Dimensions.width.size8,
+                        height: Dimensions.width.size8,
+                        borderRadius: Dimensions.width.size8 / 2,
+                        backgroundColor: '#ab1516',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Settings color="#ffffff" size={Dimensions.width.size5} />
+                    </View>
+                  </TouchableOpacity>
+
                   <TouchableOpacity
                     style={{
-                      width: Dimensions.width.size8,
-                      height: Dimensions.width.size8,
-                      borderRadius: Dimensions.width.size8 / 2,
-                      backgroundColor: '#ab1516',
+                      width: Dimensions.width.size8 * 1.5,
+                      height: Dimensions.width.size8 * 1.5,
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
@@ -180,13 +190,25 @@ const Home: HomeScreen = ({ navigation }) => {
                       setDevices((prev) => prev.filter((d) => d.id !== item.id))
                     }
                   >
-                    <Trash color="#ffffff" size={Dimensions.width.size5} />
+                    <View
+                      style={{
+                        width: Dimensions.width.size8,
+                        height: Dimensions.width.size8,
+                        borderRadius: Dimensions.width.size8 / 2,
+                        backgroundColor: '#ab1516',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Trash color="#ffffff" size={Dimensions.width.size5} />
+                    </View>
                   </TouchableOpacity>
                 </View>
               </View>
             </TouchableOpacity>
           );
         }}
+        style={{ marginVertical: 15 }}
       />
 
       <SwipeButton text="Arm Device" />
